@@ -10,4 +10,4 @@ Open for Exploration: Feel free to explore, use, and modify any code in this rep
 
 ## Table of Content
 
-- (time-picker)[https://github.com/openstatusHQ/time-picker/tree/main] - simple TimePicker for your Shadcn UI project.
+- [time-picker](https://github.com/openstatusHQ/time-picker/tree/main) - simple TimePicker for your Shadcn UI project.
