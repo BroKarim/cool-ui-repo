@@ -8,6 +8,15 @@ CodingbyGoogling is a comprehensive repository that serves as a playground and l
 - Documentation of Learning: As I explore new technologies and techniques, I document my findings and implementations here.
 Open for Exploration: Feel free to explore, use, and modify any code in this repository for your personal or professional projects.
 
+## Tech Stack
+
+- Reactjs
+- Vite
+- Tailwind CSS
+- Shadcn
+- TypeScript
+
 ## Table of Content
+All the demo code is located in the `src/components/` directory
 
 - [time-picker](https://github.com/openstatusHQ/time-picker/tree/main) - simple TimePicker for your Shadcn UI project.
