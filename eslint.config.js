@@ -33,4 +33,11 @@ export default [
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
     },
   },
+  {
+    env: {
+      browser: true,
+      node: true,
+      es6: true,
+    },
+  },
 ];
