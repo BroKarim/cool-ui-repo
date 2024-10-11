@@ -8,18 +8,15 @@ import { Header } from "./layout/header";
 
 import { TimePickerDemo } from "./components/time-picker/time-picker-demo";
 import { OTPInput } from "input-otp";
+import { RouterProvider } from "react-router-dom";
+import { Router } from "./router";
+
+import {TailwindMotionDemo} from "./components/tailwind-motion/tailwind-motion-demo";
 
 function App() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
-
   return (
     <ThemeProvider>
-      <Background>
-        <Header/>
-        <div className="w-full flex items-center justify-center h-[100vh]">
-          <OtpInput />
-        </div>
-      </Background>
+      <RouterProvider router={Router}/>
     </ThemeProvider>
   );
 }
