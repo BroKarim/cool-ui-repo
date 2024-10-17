@@ -1,52 +1,44 @@
-//repo :
-//animation : https://lordicon.com/icons/wired/outline/262-emoji-wow
-// change to :
-
 import { useState, useRef } from "react";
 import NumberFlow from "@number-flow/react";
 import { ReloadWrapper } from "../reload-wrapper";
 import * as RadixSlider from "@radix-ui/react-slider";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-// import clsx from "clsx/lite";
 import { cn } from "@/lib/utils";
 export default function Slider({ className }: RadixSlider.SliderProps) {
   const [value, setValue] = useState([0]);
-  const animationRef = useRef<Player>(null); // Ref untuk mengontrol animasi
+  const animationRef = useRef<Player>(null);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
-    setIsHovered(true); // Set state ke hover saat mouse masuk
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false); // Set state ke tidak hover saat mouse keluar
+    setIsHovered(false);
     if (animationRef.current) {
-      animationRef.current.stop(); // Stop animasi saat mouse keluar
+      animationRef.current.stop();
     }
   };
 
   const handleSliderChange = (val: number[]) => {
-    setValue([val[0]]); // Update nilai slider
+    setValue([val[0]]);
     if (animationRef.current) {
-      animationRef.current.play(); // Mulai animasi saat slider berubah
+      animationRef.current.play();
     }
   };
 
   const handleMouseUp = () => {
     if (animationRef.current) {
-      animationRef.current.stop(); // Hentikan animasi saat mouse dilepas
+      animationRef.current.stop();
     }
   };
   return (
     <ReloadWrapper className="w-96 relative font-mono">
       <div className="w-full flex justify-center items-center  px-4">
         {isHovered ? (
-          // Saat thumb di-hover atau aktif, tampilkan animasi
           <Player ref={animationRef} src="src/assets/animation/rabbit.json" className="player w-16" loop autoplay />
         ) : (
-          // <Player ref={animationRef} src="/rabbit.json" className="player w-16" loop autoplay />
-          // Jika tidak di-hover, tampilkan gambar statis
-          <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" width={40} height={40} viewBox="0 0 511.979 511.979" >
+          <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" width={40} height={40} viewBox="0 0 511.979 511.979">
             <path
               d="M343.736 447.903s-15.343-19.999-16.687-33.437c-1.344-13.452-3.765-51.889-3.765-51.889l-53.546 25.999s3.547 40.218 12.219 56.217 16.328 45.778 16.328 45.778h75.027c.001-23.998-29.576-42.668-29.576-42.668zM54.623 405.67l-11.921-69.341a10.678 10.678 0 0 0-9.078-8.766 10.669 10.669 0 0 0-11.094 6.031L1.016 379.358a10.764 10.764 0 0 0-.984 5.406c1.016 12.359 9.125 35.718 32.686 35.718 4.75 0 9.843-1.016 15.171-3.031a10.685 10.685 0 0 0 6.734-11.781z"
               style={{
