@@ -16,21 +16,7 @@ export function ETickteHeader() {
           <MainNav />
           {/* <MobileNav /> */}
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-between">
-            <div className="w-full flex-1 md:w-auto md:flex-none">
-              <a
-                className={cn(buttonVariants(), "gap-2 whitespace-pre hidden md:flex", "group relative justify-center gap-2 w-full transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 rounded-sm")}
-                href="/"
-              >
-                <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40" />
-                <Github className="h-4 w-4" />
-                Star on GitHub
-                <div className="hidden md:flex items-center gap-1 text-sm text-gray-500">
-                  <Star className="h-4 w-4 group-hover:text-yellow-300 transition-all duration-300" />
-                  {/* Counting number */}
-                  <CountingNumbers value={1000} className="font-display font-medium text-white" />
-                </div>
-              </a>
-            </div>
+            <div className="w-full flex-1 md:w-auto md:flex-none"></div>
             <nav className="flex items-center gap-2">
               <a href="/login" className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "px-4 bg-gradient-to-r from-red-600 to-amber-600 text-white")}>
                 Get Started
@@ -98,7 +84,6 @@ export function MainNav() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      ;
     </>
   );
 }
@@ -156,69 +141,3 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(({ class
   );
 });
 ListItem.displayName = "ListItem";
-
-export function CountingNumbers({
-  value,
-  className,
-  reverse = false,
-  start = reverse ? 1000 : 0,
-  interval = 10,
-  duration = 800,
-}: {
-  value: number;
-  className: string;
-  reverse?: boolean;
-  start?: number;
-  interval?: number;
-  duration?: number;
-}) {
-  const [number, setNumber] = useState(start);
-  let increment = Math.floor(Math.abs(start - value) / (duration / interval));
-  if (increment === 0) {
-    increment = 1;
-  }
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  useEffect(() => {
-    if (isInView) {
-      let timer = setInterval(() => {
-        if (reverse) {
-          if (number > value) {
-            setNumber((num) => {
-              let newValue = num - increment;
-              if (newValue < value) {
-                newValue = value;
-                if (timer) clearInterval(timer);
-              }
-              return newValue;
-            });
-          } else if (timer) {
-            clearInterval(timer);
-          }
-        } else {
-          if (number < value) {
-            setNumber((num) => {
-              let newValue = num + increment;
-              if (newValue > value) {
-                newValue = value;
-                if (timer) clearInterval(timer);
-              }
-              return newValue;
-            });
-          } else if (timer) {
-            clearInterval(timer);
-          }
-        }
-      }, interval);
-    }
-  }, [isInView]);
-
-  return (
-    <>
-      <p className={className} ref={ref}>
-        {Intl.NumberFormat().format(number)}
-      </p>
-    </>
-  );
-}

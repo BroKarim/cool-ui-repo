@@ -8,14 +8,15 @@ interface ComponentWrapperProps {
   className?: string;
   children: any;
 }
+
 export function ReloadWrapper({ className, children }: ComponentWrapperProps) {
   const [key, setKey] = React.useState(0);
 
   return (
     <>
-      <div className="max-w-screen w-full relative  justify-center rounded-xl  p-0 md:border " key={key}>
+      <div className={cn("max-w-screen w-full relative  justify-center rounded-xl p-0 md:border ", className)} key={key}>
         <div className=" inset-0 ">
-          <Button onClick={() => setKey((prev) => prev + 1)} className="absolute right-2 top-2 z-10 ml-4 flex items-center rounded-lg px-3 py-1" variant="ghost">
+          <Button onClick={() => setKey((prev) => prev + 1)} className="absolute right-0 top-0 z-10 ml-4 flex items-center rounded-lg px-3 py-1" variant="ghost">
             {" "}
             <RotateCcw aria-label="restart-btn" size={16} />
           </Button>

@@ -4,12 +4,15 @@ import AppLayout from "./layout/app-layout";
 // Twitter Demo
 import TailwindMotion from "./pages/tailwind-motion";
 import MotionPrimitive from "./pages/motion-primitive";
+import MotionNumberDemo from "./components/motion-number/motion-number-demo";
+
+import Slider from "./components/motion-number/motion-number";
 
 //BehindUI Demo
 import Home from "./behindUI/e-ticketing-bussiness";
 declare global {
   var basename: string;
-}
+} 
 
 //kayaknya buat untuk BehindUI layout khusus, biar bisa custom layout dan navbar
 export const Router = createBrowserRouter(
@@ -25,6 +28,10 @@ export const Router = createBrowserRouter(
         {
           path: "motion-primitive",
           element: <MotionPrimitive />,
+        },
+        {
+          path: "motion-number",
+          element: <Slider />,
         },
       ],
     },
