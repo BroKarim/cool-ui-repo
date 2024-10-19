@@ -1,57 +1,47 @@
 // Ref code :https://github.com/dillionverma/llm.report/blob/main/components/landing/Hero.tsx
-// Ref Concept : https://dribbble.com/shots/25023756-Landing-Page-for-E-Ticketing-Business
+// Ref desogn : https://dribbble.com/shots/24074447-Online-store-backend-Untitled-UI
 
-/*
-MASALAH : 
-- Masih bigung apakah header bagusnya digabung atau tidak 
-- Kalau nengok TailwindUI dia gabung
-
-- Tapi kaayaknya mending g gabung, biar rapi 
-- cumn apakag bisa di render ntar??? dan gimana cara registry file headernya
-*/
-import React, { CSSProperties } from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import * as React from "react";
+import { CSSProperties } from "react";
 import { Suspense } from "react";
 import { cn } from "@/lib/utils";
+import { useId } from "react";
+import { Button } from "@/components/ui/button";
 
-import { ETickteHeader as Header } from "@/layout/header/header-e-ticket";
-import { ModeToggle } from "@/components/mode-toggle";
-import GridPattern from "@/layout/background/grid-pattern";
-export default function Home() {
+//shadcn components
+import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { buttonVariants } from "@/components/ui/button";
+
+const SaaSHero1 = () => {
   return (
     <>
-      <div>
+      <div className="relative z-10 bg-white">
         <Header />
-        <div className="flex font-sans min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col font-sans">
           <div className=" space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
             <div className=" flex flex-col items-center  gap-6">
-              <h1 className="flex flex-col max-w-[64rem] md:flex-row text-5xl md:text-6xl font-bold  justify-center text-center md:h-max">
-                <span className="bg-gradient-to-r from-red-600 to-amber-600 bg-clip-text ">Power Your Email Marketing Campaigns with Ease and Efficiency</span> {/* for OpenAI */}
-              </h1>
-              <p className="text-gray-500 leading-relaxed text-xl">Know exactly what&apos;s happening in your AI app with realtime logging, analytics, usage reports, and alerts.</p>
-              <div className="flex md:flex-col items-center justify-center w-[500px]">
-                <div className="grid md:grid-cols-1 place-items-center">
-                  {/* BUTTON */}
+              <h1 className="flex text-black max-w-[64rem] flex-col justify-center text-center text-5xl font-bold  md:h-max md:flex-row md:text-6xl">Power Your Email Marketing Campaigns with Ease and Efficiency</h1>
+              <p className="text-xl leading-relaxed text-gray-500">Know exactly what&apos;s happening in your AI app with realtime logging, analytics, usage reports, and alerts.</p>
+              <div className="flex w-[500px] items-center justify-center md:flex-col">
+                <div className="grid place-items-center md:grid-cols-1">
                   <ShimmerButton className="shadow-2xl transition-all duration-300 hover:shadow-[0_0_40px_8px_rgba(185,28,28,0.5)]" background="radial-gradient(ellipse 80% 70% at 50% 120%, #f59e0b, #B91C1C)">
                     <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-2xl">Get started for free</span>
                   </ShimmerButton>
-                  {/* <Button>Get started for free</Button> */}
                 </div>
               </div>
-              <div className="flex md:flex-col items-center justify-center space-x-4 mt-4 w-[500px]">
-                <div className="mt-12 flex flex-col gap-4 justify-center items-center">
+              <div className="mt-4 flex w-[500px] items-center justify-center space-x-4 md:flex-col">
+                <div className="mt-12 flex flex-col items-center justify-center gap-4">
                   <div>
-                    <h3 className="font-semibold text-sm text-gray-600 text-center">BACKED BY THE BEST IN THE INDUSTRY</h3>
+                    <h3 className="text-center text-sm font-semibold text-gray-600">BACKED BY THE BEST IN THE INDUSTRY</h3>
                   </div>
 
                   <div className="flex flex-row gap-4">
                     <a
                       href="https://vercel.com/blog/ai-accelerator-participants"
                       target="_blank"
-                      className="group relative justify-center gap-2 w-full transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 rounded-md"
+                      className="group relative w-full justify-center gap-2 rounded-md transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
                     >
-                      <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
+                      <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
 
                       <svg fill="#000000" width="64px" height="64px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -63,8 +53,8 @@ export default function Home() {
                       </svg>
                     </a>
 
-                    <a href="https://buildspace.so/sf1" target="_blank" className="group relative justify-center gap-2 w-full transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 rounded-md">
-                      <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
+                    <a href="https://buildspace.so/sf1" target="_blank" className="group relative w-full justify-center gap-2 rounded-md transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2">
+                      <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
 
                       <svg fill="#000000" width="64px" height="64px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -75,8 +65,8 @@ export default function Home() {
                         </g>
                       </svg>
                     </a>
-                    <div className="group relative justify-center gap-2 w-full transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 rounded-md">
-                      <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
+                    <div className="group relative w-full justify-center gap-2 rounded-md transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2">
+                      <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
 
                       <svg fill="#000000" width="64px" height="64px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -104,8 +94,152 @@ export default function Home() {
       </div>
     </>
   );
+};
+export default SaaSHero1;
+
+/**
+ * Header
+ *
+ */
+export function Header() {
+  return (
+    <>
+      <header className=" sticky top-0 z-40 w-full  bg-transparent ">
+        <div className="container flex h-16 items-center">
+          <MainNav />
+          {/* <MobileNav /> */}
+          <div className="flex flex-1 items-center justify-between space-x-2 md:justify-between">
+            <div className="w-full flex-1 md:w-auto md:flex-none"></div>
+            <nav className="flex items-center gap-2">
+              <Button  >
+                Get Started
+              </Button>
+            </nav>
+          </div>
+        </div>
+      </header>
+    </>
+  );
 }
 
+export function MainNav() {
+  return (
+    <>
+      <div className="mr-4 hidden md:flex">
+        <a href="/" className="mr-6 text-black flex items-center gap-2">
+          {/* <span className="hidden font-bold sm:inline-block">BehindUI</span> */}
+          <img src="/logo.svg" alt="" className="w-24 h-24" />
+        </a>
+        <NavigationMenu className="text-black">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                      <a className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md" href="/">
+                        😂
+                        <div className="mb-2 mt-4 text-lg font-medium">llm.report</div>
+                        <p className="text-sm leading-tight text-muted-foreground">llm observability and analytics platform</p>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
+
+                  <ListItem href="https://docs.llm.report/introduction" title="Installation">
+                    How to install and configure llm.report
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+              <NavigationMenuContent data-state="open">
+                <ul className="grid w-[400px] grid-cols-1 gap-3 p-4 md:w-[300px] lg:w-[900px] lg:grid-cols-3">
+                  {components.map((component) => (
+                    <ListItem key={component.title} title={component.title} href={component.href} video={component.video}>
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <a href="https://docs.llm.report">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Docs</NavigationMenuLink>
+              </a>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <a href="/pricing">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Pricing</NavigationMenuLink>
+              </a>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+    </>
+  );
+}
+
+const components: {
+  title: string;
+  href: string;
+  description: string;
+  video?: string;
+}[] = [
+  {
+    title: "OpenAI Analytics",
+    href: "https://docs.llm.report/features/openai",
+    description: "Enter your OpenAI API key and get access to a dashboard of analytics.",
+    video: "https://cdn.llm.report/openai-demo.mp4",
+  },
+  {
+    title: "Logging",
+    href: "https://docs.llm.report/features/logs",
+    description: "Log your prompts to gain insights about latency, cost per request, and more.",
+    video: "https://cdn.llm.report/logs-demo.mp4",
+  },
+  {
+    title: "User Analytics",
+    href: "https://docs.llm.report/features/users",
+    description: "Understand your cost per user, discover your power users, and adjust your pricing strategy.",
+    video: "https://cdn.llm.report/users-demo.mp4",
+  },
+];
+
+interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
+  video?: string;
+  title: string;
+}
+
+const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          href="/"
+          ref={ref}
+          className={cn(
+            "flex h-full select-none flex-col space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-4 text-sm leading-snug text-muted-foreground">{children}</p>
+          <div className="flex-1" />
+          {props.video && <video src={props.video} autoPlay loop muted className="rounded-xl border" />}
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
+
+/**
+ * ShimmerButton Component
+ * Renders a button with a shimmering effect.
+ */
 export interface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   shimmerColor?: string;
   shimmerSize?: string;
@@ -153,7 +287,7 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
           {/* spark */}
           <div className="absolute inset-0 h-[100cqh] animate-shimmer-slide [aspect-ratio:1] [border-radius:0] [mask:none]">
             {/* spark before */}
-            <div className="animate-spin-around absolute -inset-full w-auto rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]" />
+            <div className="absolute -inset-full w-auto rotate-0 animate-spin-around [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]" />
           </div>
         </div>
         {children}
@@ -185,4 +319,38 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
 
 ShimmerButton.displayName = "ShimmerButton";
 
-// export ShimmerButton;
+/**
+ * GridPattern for Hero Background
+ */
+interface GridPatternProps {
+  width?: any;
+  height?: any;
+  x?: any;
+  y?: any;
+  squares?: Array<[x: number, y: number]>;
+  strokeDasharray?: any;
+  className?: string;
+  [key: string]: any;
+}
+
+export function GridPattern({ width = 40, height = 40, x = -1, y = -1, strokeDasharray = 0, squares, className, ...props }: GridPatternProps) {
+  const id = useId();
+
+  return (
+    <svg aria-hidden="true" className={cn("pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30", className)} {...props}>
+      <defs>
+        <pattern id={id} width={width} height={height} patternUnits="userSpaceOnUse" x={x} y={y}>
+          <path d={`M.5 ${height}V.5H${width}`} fill="none" strokeDasharray={strokeDasharray} />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
+      {squares && (
+        <svg x={x} y={y} className="overflow-visible">
+          {squares.map(([x, y]) => (
+            <rect strokeWidth="0" key={`${x}-${y}`} width={width - 1} height={height - 1} x={x * width + 1} y={y * height + 1} />
+          ))}
+        </svg>
+      )}
+    </svg>
+  );
+}

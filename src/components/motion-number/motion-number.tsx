@@ -4,6 +4,8 @@ import { ReloadWrapper } from "../reload-wrapper";
 import * as RadixSlider from "@radix-ui/react-slider";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { cn } from "@/lib/utils";
+
+
 export default function Slider({ className }: RadixSlider.SliderProps) {
   const [value, setValue] = useState([0]);
   const animationRef = useRef<Player>(null);
