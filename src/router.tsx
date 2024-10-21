@@ -8,8 +8,10 @@ import MotionPrimitive from "./pages/motion-primitive";
 import Slider from "./components/motion-number/motion-number";
 import BottomNavbar from "./components/animated-bottom-nav/bottom-nav-demo";
 
+import StepperDemo from "./components/stepper/stepper-demo";
+
 //BehindUI Demo
-import SaaSHero1 from "./behindUI/e-ticketing-bussiness";
+
 declare global {
   var basename: string;
 }
@@ -36,15 +38,19 @@ export const Router = createBrowserRouter(
           path: "bottom-nav",
           element: <BottomNavbar />,
         },
+        {
+          path: "stepper",
+          element: <StepperDemo />,
+        },
       ],
     },
     {
       path: "/behind-ui",
       children: [
-        {
-          path: "hero1",
-          element: <SaaSHero1 />,
-        },
+        // {
+        //   path: "hero1",
+        //   element: <SaaSHero1 />,
+        // },
       ],
     },
   ],
