@@ -23,4 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+src/behindUI/
+
 🚀GUIDE.txt
+PENJELASAN.txt
