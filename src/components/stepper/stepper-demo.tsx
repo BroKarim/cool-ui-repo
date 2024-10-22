@@ -23,7 +23,7 @@ export default function StepperDemo() {
   const stepper = useStepper();
   return (
     <>
-      <div className="space-y-6 p-6 border rounded-lg w-[450px]">
+      <div className="space-y-6 p-6 border rounded-lg w-[450px] font-mono">
         <div className="flex justify-between">
           <h2 className="text-lg font-medium">Checkout</h2>
           <div className="flex items-center gap-2">

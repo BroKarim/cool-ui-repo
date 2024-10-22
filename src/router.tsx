@@ -8,7 +8,7 @@ import MotionPrimitive from "./pages/motion-primitive";
 import Slider from "./components/motion-number/motion-number";
 import BottomNavbar from "./components/animated-bottom-nav/bottom-nav-demo";
 
-// import StepperDemo from "./components/stepper/stepper-demo";
+import StepperDemo from "./components/stepper/stepper-demo";
 
 //BehindUI Demo
 
@@ -38,10 +38,10 @@ export const Router = createBrowserRouter(
           path: "bottom-nav",
           element: <BottomNavbar />,
         },
-        // {
-        //   path: "stepper",
-        //   element: <StepperDemo />,
-        // },
+        {
+          path: "stepper",
+          element: <StepperDemo />,
+        },
       ],
     },
     {
