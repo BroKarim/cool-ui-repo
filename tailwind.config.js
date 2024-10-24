@@ -63,6 +63,15 @@ module.exports = {
         cal: ["var(--font-calsans)"],
       },
       keyframes: {
+        stroke: {
+          from: {
+            "stroke-dasharray": "1000",
+          },
+          to: {
+            "stroke-dasharray": "1000",
+            "stroke-dashoffset": "2000",
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -82,6 +91,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+        stroke: "stroke 5s linear infinite",
       },
     },
   },
