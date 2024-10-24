@@ -1,4 +1,4 @@
-// routeData.tsx
+
 export const routes = [
   {
     path: "/",
