@@ -1,11 +1,9 @@
-//code : https://github.com/Kinfe123/farm-ui/blob/main/apps/www/components/ui/Preview/index.tsx
 
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Highlight, themes } from "prism-react-renderer";
 import { ReloadWrapper } from "../reload-wrapper";
 import { motion } from "framer-motion";
-// import synthwave84 from "./synthwave84";
 // import vsDark from "./vsDark";
 
 interface HighlightProps {
