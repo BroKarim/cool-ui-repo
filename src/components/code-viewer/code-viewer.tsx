@@ -10,13 +10,13 @@ interface HighlightProps {
   selectedFramework: string | null;
 }
 
-type PrismTheme = typeof themes.oneLight;
+type PrismTheme = typeof themes.oneDark;
 
 // Create modified theme
 const customTheme: PrismTheme = {
-  ...themes.oneLight,
+  ...themes.oneDark,
   plain: {
-    ...themes.oneLight.plain,
+    ...themes.oneDark.plain,
     backgroundColor: "transparent" as const,
   },
 };
