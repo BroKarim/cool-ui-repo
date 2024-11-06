@@ -30,4 +30,5 @@ All the demo code is located in the `src/components/` directory
 - [shiki-magic-move](https://github.com/shikijs/shiki-magic-move) - Smoothly animated code blocks with Shiki
 - [medusa-starter-nextjs](https://github.com/medusajs/nextjs-starter-medusa) - A performant frontend ecommerce starter template with Next.js 14 and Medusa.
 - [shadcn-starter-dashboard](https://github.com/Kiranism/next-shadcn-dashboard-starter) - Admin Dashboard Starter with Nextjs14 and shadcn ui
+- [media-chrome](https://github.com/muxinc/media-chrome) - Custom elements (web components) for making audio and video player controls
   
