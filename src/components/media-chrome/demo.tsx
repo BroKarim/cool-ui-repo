@@ -1,7 +1,3 @@
-/*
-- tambah nama user : https://designsystem.line.me/LDSG/components/contents/video-player-en
-- Title
-*/
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ReloadWrapper } from "../reload-wrapper";
 import {
