@@ -11,8 +11,15 @@ import BottomNavbar from "./components/animated-bottom-nav/bottom-nav-demo";
 import StepperDemo from "./components/stepper/stepper-demo";
 import EarthIconDemo from "./components/earth-icon/earth-icon";
 
+import CodeViewer from "./components/code-viewer/code-viewer";
+import OtpInput from "./components/otp-input/otp-input-demo";
+import TerminalDemo from "./components/mac-terminal/demo";
+import SimplePlayer from "./components/media-chrome/demo";
+import { BentoDemo } from "./components/bento-scroll/demo";
+import Bento from "./components/bento-scroll/bento-v0";
 //BehindUI Demo
 import HeroDemo2 from "./behindUI/demo2/demo2";
+import Demo3 from "./behindUI/demo3/demo";
 
 declare global {
   var basename: string;
@@ -26,7 +33,7 @@ export const Router = createBrowserRouter(
       children: [
         {
           path: "",
-          element: <TailwindMotion />,
+          element: <OtpInput />,
         },
         {
           path: "motion-primitive",
@@ -48,6 +55,22 @@ export const Router = createBrowserRouter(
           path: "earth",
           element: <EarthIconDemo />,
         },
+        // {
+        //   path: "codeviewer",
+        //   element: <CodeViewer />,
+        // },
+        {
+          path: "terminal",
+          element: <TerminalDemo />,
+        },
+        {
+          path: "player",
+          element: <SimplePlayer />,
+        },
+        {
+          path: "bento",
+          element: <BentoDemo />,
+        },
       ],
     },
     {
@@ -56,6 +79,10 @@ export const Router = createBrowserRouter(
         {
           path: "hero1",
           element: <HeroDemo2 />,
+        },
+        {
+          path: "hero2",
+          element: <Demo3 />,
         },
       ],
     },
