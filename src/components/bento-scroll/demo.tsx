@@ -88,12 +88,6 @@ export function BentoDemo() {
   return (
     <>
       <ReloadWrapper className="p-4">
-        {/* <ScrollArea className=" w-full grid  auto-rows-[22rem] lg:grid-rows-3  grid-cols-3 gap-4  h-[500px]">
-          {features.map((feature) => (
-            <BentoCard key={feature.name} {...feature} />
-          ))}
-          <ScrollBar orientation="horizontal" className="w-0 bg-transparent  " />
-        </ScrollArea> */}
         <BentoGrid className="lg:grid-rows-3 font-sans h-[400px] p-2">
           {features.map((feature) => (
             <BentoCard key={feature.name} {...feature} />
