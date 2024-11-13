@@ -17,6 +17,7 @@ import TerminalDemo from "./components/mac-terminal/demo";
 import SimplePlayer from "./components/media-chrome/demo";
 import { BentoDemo } from "./components/bento-scroll/demo";
 import ConsolaDemo from "./components/consola/demo";
+import ScrambleDemo from "./components/scramble-text/demo";
 // import Bento from "./components/bento-scroll/bento-v0";
 //BehindUI Demo
 import HeroDemo2 from "./behindUI/demo2/demo2";
@@ -75,6 +76,10 @@ export const Router = createBrowserRouter(
         {
           path: "consola",
           element: <ConsolaDemo />,
+        },
+        {
+          path: "scramble",
+          element: <ScrambleDemo />,
         },
       ],
     },
