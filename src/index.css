@@ -3,9 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   font-family: "Roboto", sans-serif;
-}
+} */
 
 @layer base {
   :root {

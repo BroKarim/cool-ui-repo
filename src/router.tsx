@@ -18,9 +18,11 @@ import SimplePlayer from "./components/media-chrome/demo";
 import { BentoDemo } from "./components/bento-scroll/demo";
 import ConsolaDemo from "./components/consola/demo";
 import ScrambleDemo from "./components/scramble-text/demo";
+// import PopoverExample from "./components/profile-card/popover";
+import CardTooltipDemo from "./components/profile-card/demo";
 // import Bento from "./components/bento-scroll/bento-v0";
 //BehindUI Demo
-import HeroDemo2 from "./behindUI/demo2/demo2";
+import { HeroDemo2 } from "./behindUI/demo2/demo2";
 import Demo3 from "./behindUI/demo3/demo";
 
 declare global {
@@ -81,6 +83,10 @@ export const Router = createBrowserRouter(
           path: "scramble",
           element: <ScrambleDemo />,
         },
+        {
+          path: "popup",
+          element: <CardTooltipDemo />,
+        },
       ],
     },
     {
@@ -97,7 +103,7 @@ export const Router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: global.basename,
-  }
+  // {
+  //   basename: global.basename,
+  // }
 );
