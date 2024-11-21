@@ -41,7 +41,6 @@ export function PopoverExample({ username }: PopoverExampleProps) {
 
     loadUserData();
 
-    // Cleanup function
     return () => {
       isMounted = false;
     };
@@ -69,7 +68,7 @@ export function PopoverExample({ username }: PopoverExampleProps) {
         <TooltipContent side="bottom" sideOffset={15} className="border-none ">
           <AnimatePresence>
             <motion.div
-              className="z-10 w-full max-w-[300px] rounded-lg border border-neutral-800 bg-neutral-950 p-5"
+              className="z-10 w-full max-w-[300px] rounded-lg border dark:border-neutral-800 dark:bg-neutral-950 p-5"
               initial={{ opacity: 0, scale: 0.9, filter: "blur(4px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 0.9, filter: "blur(4px)" }}
@@ -86,22 +85,22 @@ export function PopoverExample({ username }: PopoverExampleProps) {
                 </motion.div>
                 <div className="flex flex-col gap-4">
                   <div>
-                    <motion.h1 variants={item} className="text-base font-medium text-white">
-                      {userData?.name}
+                    <motion.h1 variants={item} className="text-base font-medium dark:text-white">
+                      {userData.name}
                     </motion.h1>
-                    <motion.p variants={item} className="text-base text-neutral-400">
+                    <motion.p variants={item} className="text-base dark:text-neutral-400">
                       @{userData?.login}
                     </motion.p>
                   </div>
-                  <motion.span variants={item} className="text-base text-neutral-200">
+                  <motion.span variants={item} className="text-base dark:text-neutral-200">
                     {userData?.bio || "No bio available"}
                   </motion.span>
                   <motion.div variants={item} className="flex gap-4">
-                    <div className="flex gap-1.5">
-                      <span className="text-base font-medium text-neutral-300">{userData?.following}</span> <span className="text-base text-neutral-400">Following</span>
+                    <div className="flex gap-1.5 dark:text-neutral-300">
+                      <span className="text-base font-medium ">{userData?.following}</span> <span className="text-base ">Following</span>
                     </div>
-                    <div className="flex gap-1.5">
-                      <span className="text-base font-medium text-neutral-300">{userData?.followers}</span> <span className="text-base text-neutral-400">Followers</span>
+                    <div className="flex gap-1.5 dark:text-neutral-300">
+                      <span className="text-base font-medium">{userData?.followers}</span> <span className="text-base ">Followers</span>
                     </div>
                   </motion.div>
                 </div>

@@ -1,6 +1,6 @@
 export interface GitHubUser {
   name: string;
-  login: string; // ini adalah username/nickname (contoh: @brokariim)
+  login: string;
   bio: string | null;
   followers: number;
   following: number;
