@@ -44,6 +44,7 @@
     "react-tweet": "^3.2.1",
     "shiki": "^1.20.0",
     "shiki-magic-move": "^0.4.4",
+    "split-type": "^0.3.4",
     "swapy": "^0.4.2",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7",
